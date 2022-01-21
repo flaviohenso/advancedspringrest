@@ -8,13 +8,20 @@ import com.algaworks.algafood.enums.NivelUrgencia;
 import com.algaworks.algafood.modelo.Cliente;
 
 //@Primary // defini para o spring que esse component tem preferencia em caso de ambiguação de Bean
-@Profile("prod")// defini o ambiente onde esse Bean deve ser usado
+@Profile("dev")
 @TipoDoNotificador(NivelUrgencia.URGENTE)
 @Component
-public class NotificadorEmail implements Notificador{
+public class NotificadorEmailMock implements Notificador{
+
+	
+	
+	public NotificadorEmailMock() {
+		System.out.println("Notificador email mock");
+	}
 
 	@Override
 	public void notificar(Cliente cliente, String msg) {
+		System.out.println("Notificação de email Mock");
 		cliente.notificar(cliente, msg);		
 	}
 
