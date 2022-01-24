@@ -14,7 +14,7 @@ import com.algaworks.algafood.event.ClientAtivadoEvent;
 import com.algaworks.algafood.modelo.Cliente;
 
 @Service
-public class AtivacaoClienteService {
+public class AtivacaoClienteServiceConsumindoEventos {
 
 	//@Autowired(required = true) // quando o required estiver definido não pode possuir construtor, pq senao o spring vai ficar informando que a injecao é requerida
 	private Notificador notificador;
@@ -22,7 +22,7 @@ public class AtivacaoClienteService {
 	private ApplicationEventPublisher applicationEventPublisher;
 	
 	@Autowired
-	public AtivacaoClienteService(@TipoDoNotificador(NivelUrgencia.URGENTE) Notificador notificador, ApplicationEventPublisher applicationEventPublisher) {
+	public AtivacaoClienteServiceConsumindoEventos(@TipoDoNotificador(NivelUrgencia.URGENTE) Notificador notificador, ApplicationEventPublisher applicationEventPublisher) {
 		this.notificador = notificador;
 		this.applicationEventPublisher = applicationEventPublisher;
 	}

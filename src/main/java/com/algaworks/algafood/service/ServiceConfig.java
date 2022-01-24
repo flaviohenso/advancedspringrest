@@ -18,9 +18,9 @@ public class ServiceConfig {
 		this.notificador = notificador;
 	}
 
-	@Bean(initMethod = "init", destroyMethod = "destroy") //Forma chamar métodos de callback do ciclo de vida do spring
-	public AtivacaoClienteService ativacaoClienteService() {
-		return new AtivacaoClienteService(notificador);
-	}
+//	@Bean(initMethod = "init", destroyMethod = "destroy") //Forma de chamar métodos de callback do ciclo de vida do spring
+//	public AtivacaoClienteService ativacaoClienteService() {
+//		return new AtivacaoClienteService(notificador);
+//	}
 	
 }
